@@ -4,7 +4,9 @@ const jwt = require('jsonwebtoken')
 const router = express.Router()
 const config = require('./config')
 const tokenList = {}
+const cors = require('cors')
 const app = express()
+app.use(cors());
 
 router.get('/', (req,res) => {
     res.send('Ok');
@@ -65,4 +67,4 @@ router.get('/secure', (req,res) => {
 
 app.use(bodyParser.json())
 app.use('/api', router)
-app.listen(config.port || process.env.port || 3000);
+app.listen(2999);
